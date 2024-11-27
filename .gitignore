@@ -3,7 +3,7 @@
 *.txt
 *.dot
 *.svg
-importer.py
+session.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
