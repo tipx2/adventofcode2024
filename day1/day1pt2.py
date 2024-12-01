@@ -8,11 +8,9 @@ for line in lines:
   lefts.append(int(l))
   rights.append(int(r))
 
-lefts = sorted(lefts)
-rights = sorted(rights)
-
 total = 0
-for i in range(len(lefts)):
-  total += abs(lefts[i] - rights[i])
+
+for left in lefts:
+  total += left * rights.count(left)
 
 print(total)
