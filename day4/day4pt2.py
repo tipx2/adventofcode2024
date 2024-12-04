@@ -12,14 +12,14 @@ for i in range(len(lines)):
             mas_count = 0
 
             for k in range(2):
-                x1, y1 = offsets[k]
-                x2, y2 = offsets[k + 2]
                 
-                s_pos = (i + x1, j + y1)
-                m_pos = (i + x2, j + y2)
+                try_pos1 = (i + offsets[k][0], j + offsets[k][1])
+                try_pos2 = (i + offsets[k+2][0], j + offsets[k+2][1])
 
-                if 0 <= s_pos[0] < len(lines) and 0 <= s_pos[1] < len(lines[0]) and 0 <= m_pos[0] < len(lines) and 0 <= m_pos[1] < len(lines[0]):
-                    mas_tuple = (lines[s_pos[0]][s_pos[1]], lines[m_pos[0]][m_pos[1]])
+                if ( 0 <= try_pos1[0] < len(lines) and 0 <= try_pos1[1] < len(lines[0]) 
+                    and 0 <= try_pos2[0] < len(lines) and 0 <= try_pos2[1] < len(lines[0]) ):
+                  
+                    mas_tuple = (lines[try_pos1[0]][try_pos1[1]], lines[try_pos2[0]][try_pos2[1]])
                     if "S" in mas_tuple and "M" in mas_tuple:
                         mas_count += 1
 
