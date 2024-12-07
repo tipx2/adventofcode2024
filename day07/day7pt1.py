@@ -1,5 +1,5 @@
 from itertools import product
-with open("day7/input7.txt") as f:
+with open("day07/input7.txt") as f:
   lines = f.readlines()
 
 over_total = 0
