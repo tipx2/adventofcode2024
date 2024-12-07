@@ -1,6 +1,10 @@
 from itertools import product
+import math
 with open("day7/input7.txt") as f:
   lines = f.readlines()
+
+def concat(a, b):
+  return a * (10 ** (math.floor(math.log10(b)) + 1)) + b
 
 over_total = 0
 for line in lines:
@@ -20,7 +24,7 @@ for line in lines:
       elif op[x] == "*":
         total *= eqn[x + 1]
       elif op[x] == "|":
-        total = int(str(total) + str(eqn[x + 1]))
+        total = concat(total, eqn[x + 1])
     
     if total == result:
       over_total += result
