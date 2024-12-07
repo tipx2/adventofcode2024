@@ -1,4 +1,4 @@
-with open("day6/input6.txt") as f:
+with open("day06/input6.txt") as f:
   lines = [x.strip() for x in f.readlines()]
 
 def detect_loop(grid):

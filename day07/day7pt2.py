@@ -1,6 +1,6 @@
 from itertools import product
 import math
-with open("day7/input7.txt") as f:
+with open("day07/input7.txt") as f:
   lines = f.readlines()
 
 def concat(a, b):

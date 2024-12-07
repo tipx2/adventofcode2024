@@ -1,5 +1,5 @@
 import re
-with open("day3/input3.txt") as f:
+with open("day03/input3.txt") as f:
   lines = f.readlines()
 
 def mul_dissect(s):

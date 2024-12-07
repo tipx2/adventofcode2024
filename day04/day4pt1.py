@@ -1,4 +1,4 @@
-with open("day4/input4.txt") as f:
+with open("day04/input4.txt") as f:
   lines = [x.strip() for x in f.readlines()]
 
 max_i = len(lines)

@@ -1,4 +1,4 @@
-with open("day5/input5.txt") as f:
+with open("day05/input5.txt") as f:
     lines = f.read()
 
 rules, updates = lines.split("\n\n")

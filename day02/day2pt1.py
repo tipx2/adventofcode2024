@@ -1,4 +1,4 @@
-with open("day2/input2.txt") as f:
+with open("day02/input2.txt") as f:
     lines = f.readlines()
 
 safe = 0
