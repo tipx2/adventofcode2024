@@ -13,14 +13,19 @@ for i, line in enumerate(lines):
 boundi = len(lines)
 boundj = len(lines[0])
 
+
+def diagonal(start, di, dj):
+  poses = set()
+  new_node = start
+  while 0 <= new_node[0] < boundi and 0 <= new_node[1] < boundj:
+    poses.add(new_node)
+    new_node = (new_node[0] + di, new_node[1] + dj)
+  
+  return poses
+
 antinodes = set()
 for key in nodes.keys():
-  
-  if len(nodes[key]) > 1:
-    for node in nodes[key]:
-      antinodes.add(node)
-  
-  
+
   for node1 in nodes[key]:
     for node2 in nodes[key]:
       if node1 == node2:
@@ -29,17 +34,10 @@ for key in nodes.keys():
       di = node1[0] - node2[0]
       dj = node1[1] - node2[1]
       
-      new_node = (node1[0] + di, node1[1] + dj)
-      while 0 <= new_node[0] < boundi and 0 <= new_node[1] < boundj:
-        antinodes.add(new_node)
-        new_node = (new_node[0] + di, new_node[1] + dj)
+      start = (node1[0], node1[1])
       
-      di *= -1
-      dj *= -1
-      new_node = (node2[0] + di, node2[1] + dj)
-      while 0 <= new_node[0] < boundi and 0 <= new_node[1] < boundj:
-        antinodes.add(new_node)
-        new_node = (new_node[0] + di, new_node[1] + dj)
+      antinodes.update(diagonal(start, di, dj))
+      antinodes.update(diagonal(start, di * -1, dj * -1))
 
 
 print(len(antinodes))
