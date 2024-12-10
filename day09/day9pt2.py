@@ -21,9 +21,10 @@ for num in line:
 
 
 movedIds = set()
+maxFile = max(files)
 bufend = len(files) - 1
 
-while bufend >= 0:
+while len(movedIds) != maxFile:
   
   fileId = files[bufend]
   
