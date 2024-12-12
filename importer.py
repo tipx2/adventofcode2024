@@ -31,7 +31,7 @@ def createSource(n):
   if os.path.isfile(w_file + "pt1.py"): # do not overwrite if source files already exist
     return
   
-  default = f"with open(\"day{n.zfill(2)}/input{n}.txt\") as f:\n  lines = f.readlines()\n\n"
+  default = f"with open(\"day{n.zfill(2)}/input{n}.txt\") as f:\n  lines = [x.strip() for x in f.readlines()]\n\n"
   f = open(w_file + "pt1.py", "w")
   f.write(default)
   f = open(w_file + "pt2.py", "w")
