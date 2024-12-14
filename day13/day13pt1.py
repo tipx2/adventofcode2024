@@ -1,9 +1,6 @@
 import re
 with open("day13/input13.txt") as f:
-  lines = [x for x in f.read().strip().split("\n\n")]
-
-for x in range(len(lines)):
-  lines[x] = [int(z) for z in re.findall(r"\d+", lines[x])]
+  lines = [[int(z) for z in re.findall(r"\d+", x)] for x in f.read().strip().split("\n\n")]
 
 total = 0
 for line in lines:
