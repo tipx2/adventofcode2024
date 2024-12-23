@@ -12,13 +12,13 @@ def get_overlap(a, b):
   elif a[1] == b[1]:
     return (a[0], a[1], b[0])
 
-threes = []
+threes = set()
 
 for item in twos:
   for item2 in twos:
     overlap = get_overlap(item, item2)
     if overlap != None:
-      threes.append(overlap)
+      threes.add(overlap)
 
 total = 0
 for item in threes:
